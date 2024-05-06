@@ -1,0 +1,408 @@
+@keyframes grow {
+  from {width:0;height:0;}
+  to{width:100%;height:80vh;}
+}
+:root {
+    --mainbg: lavender;
+    --headercolor: #ffffff;
+    --navcolor: slateblue;
+    --navtext: #ffffff;
+    --footercolor: slateblue;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header {
+    background: var(--headercolor);
+    padding: 1rem;
+    text-align: right;
+    font-size: 1.5rem;
+}
+nav {
+    background: var(--navcolor);
+    color: var(--navtext);
+    padding: 1rem;
+}
+nav ul {
+  list-style: type;
+}
+nav li{
+  display: inline;
+}
+nav li a {
+  display: inline block;
+  color: white;
+  padding: 2.5vh 3vw;
+  font-size: 1.25rem;
+  text-decoration: none;
+  transition: padding .5s ease;
+}
+nav li a:hover {
+  background-color: lemonchiffon;
+  color: black;
+  padding: 2.5vh 4vw;
+}
+footer {
+    background: var(--footercolor);
+    color: var(--navtext);
+    padding: 1rem;
+    min-height: 12vh;
+    text-align: center;
+}
+.container {
+    width: 80%;
+    margin: auto;
+    background:var(--mainbg);
+    min-height: 70vh;
+}
+.cover-photo {
+  height: 80vh;
+  margin: auto;
+  background: lightgrey;
+  /*Image is 3200 x 1800 */
+  background-image: url('../images/cover-Photo1.png');
+  background-position: center;
+  background-size: cover;
+  animation-name: grow;
+  animation-duration: 1.15s;
+}
+.overlay {
+  background-color: rgba(0, 0, 0, .3);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.overlay-inner {
+  color: white;
+  text-align: center;
+}
+.overlay-inner h1{
+  color: white;
+  text-align: center;
+}
+.overlay-inner h1 {
+  font-size: 3rem;
+  padding: 1rem;
+}
+.overlay-inner p {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+.cta-button {
+  display: block;
+  max-width: 350px;
+  margin: 2vh auto;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  color: white;
+  background: slateblue;
+  font-size: 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color .3s ease;
+}
+.cta-button:hover {
+  background-color: blueviolet;
+}
+.row {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  min-height: 30vh;
+  margin: 2vh 0;
+}
+.row-dark {
+  background-color: lightgrey;
+  flex-basis: 70%;/* I added this one, but didn't work ******* */
+}
+.row .media {
+  flex-basis: 45%;
+}
+.row .text {
+  flex-basis: 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.media img {
+  display: block;
+  width: 92%;
+  margin: auto;
+}
+.text {
+  postion: center;
+}
+.text h4 {
+  padding: 2vh;
+  text-align: center;
+}
+.text p {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  padding: 2vh;
+  text-align: center;
+}
+
+/* Contact Page CSS ******************************************************************************* */
+.contact-row {
+  width: 80%;
+  max-width: 1100px;
+  margin: 3vh auto;
+}
+iframe {
+        height: 70vh;
+        width: 40vw;
+      }
+.contact-row .cta-button {
+  font-size: 1rem;
+  padding: 1rem;
+  max-width: 50%;
+}
+
+/* Cars Page ************************************************************************************** */
+.car-section-header {
+  font-size: 2rem;
+  padding: 2vh;
+  border: 1px solid black;
+  color: slateblue;
+}
+.car-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 90%;
+  margin: auto;
+}
+.car-item {
+  width: 45%;
+  margin: 1rem;
+  background: lightgrey;
+  overflow: hidden;
+  border-radius: 12px;
+}
+.car-image {
+  position: relative;
+  width: 100%;
+  height: 38vh;
+  overflow: hidden;
+}
+.car-image img {
+  display: block;
+  width:100%;
+}
+.car-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, .6);
+  color: white;
+  text-align: center;
+  font-size: 1.25rem;
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: .35s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.car-item:hover .car-overlay {
+  height: 100%;
+}
+.car-overlay p{
+  width: 90%;
+}
+.car-overlay .cta-button{
+  font-size: .75rem;
+  padding: .5rem;
+  width: 70%;
+}
+.car-text h4 {
+  font-size: 1.75rem;
+  padding: .4rem;
+}
+.car-text p{
+  font-size: 1.25rem;
+  padding: .5rem;
+  line-height: 1.75rem;
+}
+
+
+/*Deals Page ********************************************************************************* */
+.deals-container {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 2.5vh 1vw;
+  width: 80%;
+  margin: 2vh auto;
+  justify-content: center;/* Added line by me */
+}
+.deals-item {
+  flex: 0 0 45%;
+  position: relative;
+}
+.deals-item img {
+  display: block;
+  width: 100%;
+}
+.deals-overlay {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0,.6);
+  color: white;
+  text-align: center;
+  font-size: 1.25rem;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+  transition: .5s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.deals-item:hover .deals-overlay {
+  height: 100%;
+  width: 50%;
+}
+.deals-overlay .cta-button {
+  width: 90%;
+  padding: 1vh;
+  font-size: 1rem;
+}
+/* Team page ************************************************************************ */
+.team-container {
+  display: flex;
+  flex-flow: wrap;
+  gap: 3vh 3vh;
+  width: 80%;
+  margin: auto;
+}
+.grid-item {
+  color: slateblue;
+  flex: 0 0 45%;
+  padding: 2vh;
+  display: grid;
+  grid-template-rows: 1fr 1fr 2fr;
+  grid-template-columns: 1fr 2fr;
+  grid-template-areas:
+      "pic name"
+      "pic title"
+      "pic bio";
+}
+.grid-image {
+  grid-area: pic;
+  background: slateblue;
+}
+.grid-image img {
+  display: block;
+  width: 90%;
+  margin: auto;
+}
+.grid-item h3 {
+  grid-area: name;
+  padding: 1vh;
+  margin: auto;
+}
+.grid-item h4 {
+  grid-area: title;
+  padding: 1vh;
+  font-weight: normal;
+  border-bottom: 1px slateblue solid;
+  border-top: 1px slateblue solid;
+}
+.grid-item p {
+  grid-area: bio;
+  padding: 1vh;
+}
+.car-section-header {
+    border: 1px solid;
+    border-color: slateblue;
+}
+
+
+
+@media only screen and (max-width:800px) {
+  .container {
+    width: 100%;
+    margin: auto;
+  }
+  /* General CSS ******************************************************* */
+  header, footer {
+    text-align: center;
+  }
+  nav li a {
+    display: block;
+  }
+  /* Index Page ********************************* */
+  .row {
+    flex-direction: column;
+    text-align: center;
+  }
+  .row-dark {
+    flex-direction: column-reverse;
+    padding: 2vh;
+  }
+  iframe {
+    height: 50vh;
+    width: 73vw;
+  }
+  /* Vehicles Page ****************************** */
+  .car-container {
+    flex-direction: column;
+  }
+  .car-item {
+    width: 100%;
+    text-align: center;
+  }
+  .car-image img {
+    width: relative;
+  }
+  .car-section-header {
+    text-align: center;
+  }
+  /* Deals page ********************************** */
+  .deals-container {
+    flex-flow: column wrap;
+  }
+  .deals-item:hover .deals-overlay {
+    width: 100%;
+  }
+  .deals-overlay .cta-button {
+    width: 60%;
+    padding: 2vh;
+    font-size: 1.25rem;
+  }
+  /* Team Page ********************************** */
+  .team-container {
+    flex-flow: column wrap;
+  }
+  .grid-image {
+    text-align: center;
+    flex: 0 0 100%;
+    grid-template-rows: auto 45vh auto auto;
+    grid-template-columns: 100%;
+    grid-template-areas:
+        "name"
+        "pic"
+        "title"
+        "bio"
+  }
+  .grid-image {
+    padding: 2vh;
+  }
+  .grid-image img {
+    height: 100%;
+  }
+  /* Contact Page CSS is applied from Index Page CSS setup */
+}
